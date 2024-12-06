@@ -16,12 +16,12 @@
 
 -  **Danışman:**  
 
-[https://github.com/keyvanarasteh](Keyvan Arasteh)
+[https://github.com/keyvanarasteh] (Keyvan Arasteh)
 
 
 -  **Takım Üyeleri:**
 
-[https://github.com/nidanurkose](Nida Nur Köse)
+[https://github.com/nidanurkose] (Nida Nur Köse)
 
 
   
