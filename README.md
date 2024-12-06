@@ -26,17 +26,17 @@
 
 ## Özellikler
 
-- [Kişisel Gelişim ve Hedef Takibi]
+- Kişisel Gelişim ve Hedef Takibi
 
-- [Alışkanlık Yönetimi]
+- Alışkanlık Yönetimi
 
-- [Motivasyon ve İlham]
+- Motivasyon ve İlham
 
-- [Kullanıcı Profili ve Kişiselleştirme]
+- Kullanıcı Profili ve Kişiselleştirme
 
-- [Çoklu Dil Desteği]
+- Çoklu Dil Desteği
 
-- [Ayarlar ve Bildirimler]
+- Ayarlar ve Bildirimler
 
 ## Kullanılan Teknolojiler
 
@@ -78,7 +78,7 @@ git  clone [https://github.com/nidanurkose/ShineUp-Flutter]
 
 ```bash
 
-cd []
+cd [https://github.com/nidanurkose/ShineUp-Flutter]
 
 ```
 
@@ -162,7 +162,6 @@ lib/
 
 - İstinye Üniversitesi'ne destekleri için teşekkür ederiz
 
-- [Değerli hocam Keyvan Arasteh'e teşekkür ederim]
 
   
   
