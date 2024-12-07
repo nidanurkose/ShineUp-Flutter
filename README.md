@@ -124,12 +124,17 @@ lib/
 
 ```
 
-  
 
 ## Ekran Görüntüleri
 
-[Uygulama ekran görüntüleri buraya eklenecek]
+### Yükleniyor
+![Yüklenme sayfası](./assets/screenshots/loading_screenshots.png)
 
+### Ana Sayfa
+![Ana Sayfa](./assets/screenshots/home_screenshots.png)
+
+### Hedefler Sayfası
+![Hedefler](./assets/screenshots/goals_screenshots.png)
   
 
 ## Projeye Katkı Sağlama
