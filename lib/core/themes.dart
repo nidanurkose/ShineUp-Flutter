@@ -25,7 +25,7 @@ class AppThemes {
   static final ThemeData darkTheme = ThemeData(
     brightness: Brightness.dark,
     primaryColor: const Color(0xFF788585), // Dumanlı yeşil
-    scaffoldBackgroundColor: const Color(0xFF202124), // Koyu gri
+    scaffoldBackgroundColor: const Color.fromARGB(255, 28, 29, 32), // Koyu gri
     colorScheme: const ColorScheme.dark(
       primary: Color(0xFF9D8189), // Soluk mor/pembe
       secondary: Color(0xFF6B8B7B), // Koyu zeytin yeşili

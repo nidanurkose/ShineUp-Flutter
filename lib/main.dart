@@ -15,11 +15,11 @@ class MyApp extends StatelessWidget {
       title: 'ShineUp',
       theme: ThemeData(
         brightness: Brightness.light, // Gündüz modu
-        primaryColor: const Color(0xFFD8E2DC), // Açık pastel yeşil
+        primaryColor: const Color.fromARGB(255, 118, 139, 127), // Açık pastel yeşil
         scaffoldBackgroundColor: const Color(0xFFFFFFFF), // Beyaz arka plan
         appBarTheme: const AppBarTheme(
-          backgroundColor: Color(0xFFF4ACB7), // Soft pembe
-          foregroundColor: Colors.white, // Yazı rengi
+          backgroundColor: Color.fromARGB(255, 243, 169, 180), // Soft pembe
+          foregroundColor: Color.fromARGB(255, 173, 169, 169), // Yazı rengi
         ),
       ),
       darkTheme: ThemeData(
@@ -27,7 +27,7 @@ class MyApp extends StatelessWidget {
         primaryColor: const Color(0xFF788585), // Dumanlı yeşil
         scaffoldBackgroundColor: const Color(0xFF202124), // Siyah arka plan
         appBarTheme: const AppBarTheme(
-          backgroundColor: Color(0xFF9D8189), // Soluk mor/pembe
+          backgroundColor: Color.fromARGB(255, 172, 143, 151), // Soluk mor/pembe
           foregroundColor: Colors.white, // Yazı rengi
         ),
       ),

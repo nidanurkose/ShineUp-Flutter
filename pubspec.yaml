@@ -22,7 +22,12 @@ dev_dependencies:
 flutter:
   uses-material-design: true
   assets:
-    - assets/images/
-    - assets/icons/
+    - assets/images/shineup_logo.webp
+    - assets/icons/shineup_goals.png
+    - assets/icons/shineup_habits.png
+    - assets/icons/shineup_home.png
+    - assets/icons/shineup_profile.png
+    - assets/icons/shineup_settings.png
     - assets/languages/
     - assets/motions/
+  

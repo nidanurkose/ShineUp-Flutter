@@ -1,5 +1,26 @@
 import 'package:flutter/material.dart';
 
+void main() {
+  runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'ShineUp',
+      theme: ThemeData(
+        primaryColor: Colors.deepPurple, // Ana renk
+        secondaryHeaderColor: Colors.orange, // İkinci renk
+        buttonTheme: ButtonThemeData(
+          buttonColor: Colors.green, // Buton arka plan rengi
+        ),
+      ),
+      home: const HomeScreen(),
+    );
+  }
+}
+
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
 
@@ -8,61 +29,122 @@ class HomeScreen extends StatelessWidget {
     final theme = Theme.of(context); // Aktif temayı alıyoruz
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Ana Sayfa'),
-        backgroundColor: theme.primaryColor,
+        title: const Text('ShineUp'),
+        backgroundColor: theme.primaryColor, // AppBar rengi
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text(
-              'Hedeflerinize Hoş Geldiniz!',
-              style: TextStyle(
-                fontSize: 24,
-                fontWeight: FontWeight.bold,
-                color: theme.primaryColor,
+            // Home butonunu en üstte "Ana Sayfa" başlığının yerine koyuyoruz
+            ElevatedButton(
+              onPressed: () {
+                Navigator.pushNamed(context, '/home');
+              },
+              style: ElevatedButton.styleFrom(
+                backgroundColor: theme.primaryColor, // Buton rengi
+              ),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Image.asset(
+                    'assets/icons/shineup_home.png', // İkon yolu
+                    width: 24,
+                    height: 24,
+                  ),
+                  const SizedBox(width: 8),
+                  const Text('Ana Sayfa'), // Buton metni
+                ],
               ),
             ),
             const SizedBox(height: 20),
+            // Hedefler Butonu ve İkonu
             ElevatedButton(
               onPressed: () {
-                Navigator.pushNamed(context, '/goals'); // Hedefler sayfasına yönlendirme
+                Navigator.pushNamed(context, '/goals');
               },
               style: ElevatedButton.styleFrom(
-                backgroundColor: theme.secondaryHeaderColor,
+                backgroundColor: theme.secondaryHeaderColor, // Buton rengi
               ),
-              child: const Text('Hedefler'),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Image.asset(
+                    'assets/icons/shineup_goals.png', // İkon yolu
+                    width: 24,
+                    height: 24,
+                  ),
+                  const SizedBox(width: 8),
+                  const Text('Hedefler'), // Hedefler metni
+                ],
+              ),
             ),
             const SizedBox(height: 10),
+            // Alışkanlıklar Butonu
             ElevatedButton(
               onPressed: () {
-                Navigator.pushNamed(context, '/habits'); // Alışkanlıklar sayfasına yönlendirme
+                Navigator.pushNamed(context, '/habits');
               },
               style: ElevatedButton.styleFrom(
-                backgroundColor: theme.secondaryHeaderColor,
+                backgroundColor: theme.secondaryHeaderColor, // Buton rengi
               ),
-              child: const Text('Alışkanlıklar'),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Image.asset(
+                    'assets/icons/shineup_habits.png', // İkon yolu
+                    width: 24,
+                    height: 24,
+                  ),
+                  const SizedBox(width: 8),
+                  const Text('Alışkanlıklar'),
+                ],
+              ),
             ),
             const SizedBox(height: 10),
+            // Profil Butonu
             ElevatedButton(
               onPressed: () {
-                Navigator.pushNamed(context, '/profile'); // Profil sayfasına yönlendirme
+                Navigator.pushNamed(context, '/profile');
               },
               style: ElevatedButton.styleFrom(
-                backgroundColor: theme.secondaryHeaderColor,
+                backgroundColor: theme.secondaryHeaderColor, // Buton rengi
               ),
-              child: const Text('Profil'),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Image.asset(
+                    'assets/icons/shineup_profile.png', // İkon yolu
+                    width: 24,
+                    height: 24,
+                  ),
+                  const SizedBox(width: 8),
+                  const Text('Profil'),
+                ],
+              ),
             ),
             const SizedBox(height: 10),
+            // Ayarlar Butonu
             ElevatedButton(
               onPressed: () {
-                Navigator.pushNamed(context, '/settings'); // Ayarlar sayfasına yönlendirme
+                Navigator.pushNamed(context, '/settings');
               },
               style: ElevatedButton.styleFrom(
-                backgroundColor: theme.secondaryHeaderColor,
+                backgroundColor: theme.secondaryHeaderColor, // Buton rengi
               ),
-              child: const Text('Ayarlar'),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Image.asset(
+                    'assets/icons/shineup_settings.png', // İkon yolu
+                    width: 24,
+                    height: 24,
+                  ),
+                  const SizedBox(width: 8),
+                  const Text('Ayarlar'),
+                ],
+              ),
             ),
           ],
         ),
@@ -70,4 +152,3 @@ class HomeScreen extends StatelessWidget {
     );
   }
 }
-
