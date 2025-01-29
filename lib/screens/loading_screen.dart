@@ -7,7 +7,7 @@ class LoadingScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,  // Arka plan rengini beyaz yapıyoruz
+      backgroundColor: Colors.white,  
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,  // Ekranda ortalamak için
         crossAxisAlignment: CrossAxisAlignment.center,  // Yatayda ortalamak için

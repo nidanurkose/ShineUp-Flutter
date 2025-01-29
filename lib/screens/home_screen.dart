@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 void main() {
   runApp(MyApp());
@@ -40,7 +41,7 @@ class HomeScreen extends StatelessWidget {
             // Home butonunu en üstte "Ana Sayfa" başlığının yerine koyuyoruz
             ElevatedButton(
               onPressed: () {
-                Navigator.pushNamed(context, '/home');
+                context.go('/home');
               },
               style: ElevatedButton.styleFrom(
                 backgroundColor: theme.primaryColor, // Buton rengi
@@ -62,7 +63,7 @@ class HomeScreen extends StatelessWidget {
             // Hedefler Butonu ve İkonu
             ElevatedButton(
               onPressed: () {
-                Navigator.pushNamed(context, '/goals');
+                context.go('/goals');
               },
               style: ElevatedButton.styleFrom(
                 backgroundColor: theme.secondaryHeaderColor, // Buton rengi
