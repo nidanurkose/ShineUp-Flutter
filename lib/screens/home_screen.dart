@@ -1,155 +1,141 @@
+import 'package:dotlottie_loader/dotlottie_loader.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:go_router/go_router.dart';
+import 'package:lottie/lottie.dart';
+import 'package:provider/provider.dart';
 
-void main() {
-  runApp(MyApp());
-}
-
-class MyApp extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'ShineUp',
-      theme: ThemeData(
-        primaryColor: Colors.deepPurple, // Ana renk
-        secondaryHeaderColor: Colors.orange, // İkinci renk
-        buttonTheme: ButtonThemeData(
-          buttonColor: Colors.green, // Buton arka plan rengi
-        ),
-      ),
-      home: const HomeScreen(),
-    );
-  }
-}
+import '../core/themes.dart';
+import '../widgets/bottom_menu.dart';
+import '../widgets/suggested_action_card.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    final theme = Theme.of(context); // Aktif temayı alıyoruz
     return Scaffold(
       appBar: AppBar(
-        title: const Text('ShineUp'),
-        backgroundColor: theme.primaryColor, // AppBar rengi
+        title: Text('ShineUp', style: Theme.of(context).textTheme.headlineMedium),
+        centerTitle: true,
+        actions: [
+          IconButton(
+            icon: Icon(CupertinoIcons.moon_stars),
+            onPressed: () {
+              context.read<ThemeProvider>().toggleTheme();
+            },
+          ),
+        ],
       ),
-      body: Padding(
-        padding: const EdgeInsets.all(16.0),
+      drawer: Drawer(
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            // Home butonunu en üstte "Ana Sayfa" başlığının yerine koyuyoruz
-            ElevatedButton(
-              onPressed: () {
-                context.go('/home');
-              },
-              style: ElevatedButton.styleFrom(
-                backgroundColor: theme.primaryColor, // Buton rengi
+            UserAccountsDrawerHeader(
+              currentAccountPicture: CircleAvatar(
+                backgroundColor: Theme.of(context).colorScheme.primaryContainer,
+                child: Icon(
+                  CupertinoIcons.person_circle,
+                  size: 50,
+                  color: Theme.of(context).colorScheme.onPrimaryContainer,
+                ),
               ),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Image.asset(
-                    'assets/icons/shineup_home.png', // İkon yolu
-                    width: 24,
-                    height: 24,
-                  ),
-                  const SizedBox(width: 8),
-                  const Text('Ana Sayfa'), // Buton metni
-                ],
+              accountName: Text("Hoşgeldiniz"),
+              accountEmail: null,
+              decoration: BoxDecoration(
+                color: Theme.of(context).colorScheme.primary,
               ),
             ),
-            const SizedBox(height: 20),
-            // Hedefler Butonu ve İkonu
-            ElevatedButton(
-              onPressed: () {
-                context.go('/goals');
-              },
-              style: ElevatedButton.styleFrom(
-                backgroundColor: theme.secondaryHeaderColor, // Buton rengi
-              ),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Image.asset(
-                    'assets/icons/shineup_goals.png', // İkon yolu
-                    width: 24,
-                    height: 24,
+            ListTile(
+              leading: Icon(CupertinoIcons.home),
+              title: Text('Ana Sayfa'),
+              onTap: () => Navigator.pop(context),
+            ),
+            ListTile(
+              leading: Icon(CupertinoIcons.flag),
+              title: Text('Hedefler'),
+              onTap: () => context.push("/goals"),
+            ),
+            ListTile(
+              leading: Icon(CupertinoIcons.check_mark_circled),
+              title: Text('Alışkanlıklar'),
+              onTap: () => context.push("/habits"),
+            ),
+            ListTile(
+              leading: Icon(CupertinoIcons.settings),
+              title: Text('Ayarlar'),
+              onTap: () => context.push("/settings"),
+            ),
+            Spacer(),
+            Divider(),
+            ListTile(
+              leading: Icon(Icons.logout),
+              title: Text('Çıkış Yap'),
+              onTap: () => context.go("/login"),
+            ),
+          ],
+        ),
+      ),
+      body: SafeArea(
+        child: Column(
+          children: [
+            Expanded(
+              flex: 2,
+              child: Container(
+                padding: EdgeInsets.all(24),
+                child: AspectRatio(
+                  aspectRatio: 1,
+                  child: DotLottieLoader.fromAsset(
+                    "assets/motions/motivation.lottie",  // Burada DotLottieLoader kullanıldı
+                    frameBuilder: (context, dotlottie) {
+                      if (dotlottie != null) {
+                        return Lottie.memory(
+                          dotlottie.animations.values.single,
+                        );
+                      }
+                      return const SizedBox();
+                    },
                   ),
-                  const SizedBox(width: 8),
-                  const Text('Hedefler'), // Hedefler metni
-                ],
+                ),
               ),
             ),
-            const SizedBox(height: 10),
-            // Alışkanlıklar Butonu
-            ElevatedButton(
-              onPressed: () {
-                Navigator.pushNamed(context, '/habits');
-              },
-              style: ElevatedButton.styleFrom(
-                backgroundColor: theme.secondaryHeaderColor, // Buton rengi
-              ),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Image.asset(
-                    'assets/icons/shineup_habits.png', // İkon yolu
-                    width: 24,
-                    height: 24,
-                  ),
-                  const SizedBox(width: 8),
-                  const Text('Alışkanlıklar'),
-                ],
-              ),
-            ),
-            const SizedBox(height: 10),
-            // Profil Butonu
-            ElevatedButton(
-              onPressed: () {
-                Navigator.pushNamed(context, '/profile');
-              },
-              style: ElevatedButton.styleFrom(
-                backgroundColor: theme.secondaryHeaderColor, // Buton rengi
-              ),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Image.asset(
-                    'assets/icons/shineup_profile.png', // İkon yolu
-                    width: 24,
-                    height: 24,
-                  ),
-                  const SizedBox(width: 8),
-                  const Text('Profil'),
-                ],
-              ),
-            ),
-            const SizedBox(height: 10),
-            // Ayarlar Butonu
-            ElevatedButton(
-              onPressed: () {
-                Navigator.pushNamed(context, '/settings');
-              },
-              style: ElevatedButton.styleFrom(
-                backgroundColor: theme.secondaryHeaderColor, // Buton rengi
-              ),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Image.asset(
-                    'assets/icons/shineup_settings.png', // İkon yolu
-                    width: 24,
-                    height: 24,
-                  ),
-                  const SizedBox(width: 8),
-                  const Text('Ayarlar'),
-                ],
+            Expanded(
+              flex: 3,
+              child: Container(
+                decoration: BoxDecoration(
+                  color: Theme.of(context).colorScheme.surfaceVariant,
+                  borderRadius: BorderRadius.vertical(top: Radius.circular(32)),
+                ),
+                child: ListView(
+                  padding: EdgeInsets.all(24),
+                  children: [
+                    SuggestedActionCard(
+                      icon: Icons.flag,
+                      title: "Hedeflerini Belirle",
+                      subtitle: "Kişisel gelişim hedefleri koy",
+                      onTap: () => context.push("/goals"),
+                    ),
+                    SizedBox(height: 16),
+                    SuggestedActionCard(
+                      icon: Icons.check,
+                      title: "Alışkanlıklarını Takip Et",
+                      subtitle: "Günlük alışkanlıklarını oluştur ve takip et",
+                      onTap: () => context.push("/habits"),
+                    ),
+                    SizedBox(height: 16),
+                    SuggestedActionCard(
+                      icon: Icons.mood,
+                      title: "Motivasyonunu Artır",
+                      subtitle: "Günlük motivasyon alıntıları keşfet",
+                      onTap: () => context.push("/motivation"),
+                    ),
+                  ],
+                ),
               ),
             ),
           ],
         ),
       ),
+      bottomNavigationBar: BottomMenu(),
     );
   }
 }

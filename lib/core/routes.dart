@@ -9,7 +9,7 @@ import '../screens/settings_screen.dart';
 
 // Router yapılandırması
 final router = GoRouter(
-  initialLocation: '/', // Başlangıç rotası
+  initialLocation: '/home', // Başlangıç rotası
   routes: [
     // Yükleme ekranı
     GoRoute(
