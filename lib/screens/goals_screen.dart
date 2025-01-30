@@ -103,14 +103,6 @@ class _GoalsScreenState extends State<GoalsScreen> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Center(
-              child: Lottie.asset(
-                "assets/motions/goals.lottie", // Lottie animasyonu
-                width: 200,
-                height: 200,
-                fit: BoxFit.contain,
-              ),
-            ),
             Text(
               'Kişisel Hedeflerinizi Belirleyin!',
               style: TextStyle(

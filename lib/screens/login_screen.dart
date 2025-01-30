@@ -12,11 +12,12 @@ class _LoginScreenState extends State<LoginScreen> {
   TextEditingController epostaYonetici = TextEditingController();
   TextEditingController sifreYonetici = TextEditingController();
 
+  // Giriş Yap işlemi
   girisYap() {
     if (epostaYonetici.text.isEmpty || sifreYonetici.text.isEmpty) {
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(
-          content: Text("Bilgileriniz Giriniz"),
+          content: Text("Bilgilerinizi giriniz"),
           behavior: SnackBarBehavior.floating,
           backgroundColor: Colors.red,
           showCloseIcon: true,
@@ -26,14 +27,14 @@ class _LoginScreenState extends State<LoginScreen> {
       if (sifreYonetici.text.length < 8) {
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(
-            content: Text("Şifre Minimum 8 haneli olabilir."),
+            content: Text("Şifre en az 8 karakter olmalıdır."),
             behavior: SnackBarBehavior.floating,
             backgroundColor: Colors.red,
             showCloseIcon: true,
           ),
         );
       } else {
-        context.go("/home");  // GoRouter ile yönlendirme
+        context.go("/home"); // GoRouter ile yönlendirme
       }
     }
   }
@@ -41,7 +42,9 @@ class _LoginScreenState extends State<LoginScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
+      appBar: AppBar(
+        title: Text("Giriş Yap"),
+      ),
       body: Center(
         child: SizedBox(
           width: 300,
@@ -88,7 +91,7 @@ class _LoginScreenState extends State<LoginScreen> {
               // Kayıt Ol Button
               ElevatedButton(
                 onPressed: () {
-                  context.pushReplacement("/register");  // GoRouter ile yönlendirme
+                  context.pushReplacement("/register"); // Kayıt ekranına yönlendir
                 },
                 style: ElevatedButton.styleFrom(
                   minimumSize: Size(double.infinity, 50),

@@ -4,7 +4,8 @@ import '../screens/loading_screen.dart';
 import '../screens/home_screen.dart';
 import '../screens/goals_screen.dart';
 import '../screens/habits_screen.dart';
-import '../screens/history_screen.dart' ;
+import '../screens/motivation_screen.dart';
+import '../screens/history_screen.dart';
 import '../screens/voice_screen.dart';
 import '../screens/profile_screen.dart';
 import '../screens/settings_screen.dart';
@@ -44,6 +45,14 @@ final router = GoRouter(
       pageBuilder: (context, state) => NoTransitionPage<void>(
         key: state.pageKey,
         child: const HabitsScreen(),
+      ),
+    ),
+    // Motivasyon sayfası
+    GoRoute(
+      path: '/motivation',
+      pageBuilder: (context, state) => NoTransitionPage<void>(
+        key: state.pageKey,
+        child: const MotivationScreen(),
       ),
     ),
     // Geçmiş sayfası

@@ -64,14 +64,6 @@ class _HabitsScreenState extends State<HabitsScreen> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Center(
-              child: Lottie.asset(
-                'assets/motions/habits.lottie', // Kendi animasyon dosyanızı burada belirtebilirsiniz
-                width: 200,
-                height: 200,
-                fit: BoxFit.contain,
-              ),
-            ),
             const SizedBox(height: 20),
             Text(
               'Alışkanlıklarınızı Buradan Takip Edin',

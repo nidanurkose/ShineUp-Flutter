@@ -60,6 +60,12 @@ class HomeScreen extends StatelessWidget {
               title: Text('Alışkanlıklar'),
               onTap: () => context.push("/habits"),
             ),
+            ListTile(
+              leading: Icon(CupertinoIcons.bolt), // Motivasyon için uygun bir ikon
+              title: Text('Motivation Screen'),
+              onTap: () => context.push("/motivation"),
+            ),
+
              ListTile(
               leading: Icon(CupertinoIcons.mic),
               title: Text('Voice Screen'),
