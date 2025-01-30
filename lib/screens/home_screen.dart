@@ -60,6 +60,21 @@ class HomeScreen extends StatelessWidget {
               title: Text('Alışkanlıklar'),
               onTap: () => context.push("/habits"),
             ),
+             ListTile(
+              leading: Icon(CupertinoIcons.mic),
+              title: Text('Voice Screen'),
+              onTap: () => context.push("/voice"),
+            ),
+            ListTile(
+              leading: Icon(Icons.history),
+              title: Text('History Screen'),
+              onTap: () => context.push("/history"),
+            ),
+            ListTile(
+              leading: Icon(CupertinoIcons.person),
+              title: Text('Login Screen'),
+              onTap: () => context.push("/login"),
+            ),
             ListTile(
               leading: Icon(CupertinoIcons.settings),
               title: Text('Ayarlar'),
@@ -81,7 +96,7 @@ class HomeScreen extends StatelessWidget {
             Expanded(
               flex: 2,
               child: Container(
-                padding: EdgeInsets.all(24),
+                padding: EdgeInsets.all(15),
                 child: AspectRatio(
                   aspectRatio: 1,
                   child: DotLottieLoader.fromAsset(

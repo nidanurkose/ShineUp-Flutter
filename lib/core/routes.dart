@@ -4,8 +4,11 @@ import '../screens/loading_screen.dart';
 import '../screens/home_screen.dart';
 import '../screens/goals_screen.dart';
 import '../screens/habits_screen.dart';
+import '../screens/history_screen.dart' ;
+import '../screens/voice_screen.dart';
 import '../screens/profile_screen.dart';
 import '../screens/settings_screen.dart';
+import '../screens/login_screen.dart';
 
 // Router yapılandırması
 final router = GoRouter(
@@ -43,6 +46,22 @@ final router = GoRouter(
         child: const HabitsScreen(),
       ),
     ),
+    // Geçmiş sayfası
+    GoRoute(
+      path: '/history',
+      pageBuilder: (context, state) => NoTransitionPage<void>(
+        key: state.pageKey,
+        child: const HistoryScreen(),
+      ),
+    ),
+    // HAkıllı Asistan sayfası
+    GoRoute(
+      path: '/voice',
+      pageBuilder: (context, state) => NoTransitionPage<void>(
+        key: state.pageKey,
+        child: const VoiceScreen(),
+      ),
+    ),
     // Profil sayfası
     GoRoute(
       path: '/profile',
@@ -57,6 +76,14 @@ final router = GoRouter(
       pageBuilder: (context, state) => NoTransitionPage<void>(
         key: state.pageKey,
         child: const SettingsScreen(),
+      ),
+    ),
+    // Kayıt Ol sayfası
+    GoRoute(
+      path: '/login',
+      pageBuilder: (context, state) => NoTransitionPage<void>(
+        key: state.pageKey,
+        child: const LoginScreen(),
       ),
     ),
   ],
