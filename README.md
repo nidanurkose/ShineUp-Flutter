@@ -107,7 +107,7 @@ flutter  run
   
 
 ## Proje Yapısı
-
+```
 lib/
 ├── ekranlar/            # Uygulamanın tüm ekranları
 │   ├── login_screen.dart   # Giriş ekranı
@@ -138,7 +138,7 @@ lib/
 │   └── constants.dart      # Sabitler (örneğin renkler, boyutlar)
 │
 └── main.dart             # Uygulamanın başlangıç noktası
-
+```
 
 
 ## Ekran Görüntüleri
