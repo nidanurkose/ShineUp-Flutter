@@ -108,21 +108,37 @@ flutter  run
 
 ## Proje Yapısı
 
-```
-
 lib/
+├── ekranlar/            # Uygulamanın tüm ekranları
+│   ├── login_screen.dart   # Giriş ekranı
+│   ├── home_screen.dart    # Anasayfa ekranı
+│   ├── goals_screen.dart   # Hedefler ekranı
+│   ├── profile_screen.dart # Profil ekranı
+│   ├── history_screen.dart # Geçmiş ekranı
+│   └── settings_screen.dart # Ayarlar ekranı
+│   ├── voice_screen.dart # Asistan ekranı
+│   └── habits_screen.dart # Alışkanlıklar ekranı
+│   ├── motivation_screen.dart # Geçmiş ekranı
+│   └── loadings_screen.dart # Ayarlar ekranı
+│
+├── modeller/            # Veri modelleri
+│   ├── user_model.dart     # Kullanıcı model
+│   ├── goal_model.dart     # Hedef model
+│   └── habit_model.dart    # Alışkanlık model
+│
+├── widgets/             # Tekrar kullanılabilir widget'lar
+│   ├── bottom_menu.dart    
+│   ├── logo.dart  
+│   └── isuggested_action.dart   
+│
+├── servisler/           # API servisleri veya veri çekme işlemleri
+│   ├── api.dart  
+│
+├── yardımcılar/         # Yardımcı fonksiyonlar
+│   └── constants.dart      # Sabitler (örneğin renkler, boyutlar)
+│
+└── main.dart             # Uygulamanın başlangıç noktası
 
-├── modeller/ # Veri modelleri
-
-├── ekranlar/ # Uygulama ekranları
-
-├── widgets/ # Tekrar kullanılabilir arayüz öğeleri
-
-├── servisler/ # API servisleri
-
-└── yardımcılar/ # Yardımcı fonksiyonlar
-
-```
 
 
 ## Ekran Görüntüleri
@@ -131,11 +147,25 @@ lib/
 ![Yüklenme sayfası](./assets/screenshots/loading_screenshots.png)
 
 ### Ana Sayfa
-![Ana Sayfa](./assets/screenshots/home_screenshots.png)
-
+![Ana Sayfa](./assets/screenshots/home_screenshots1.png)
+![Ana Sayfa](./assets/screenshots/home_screenshots2.png)
 ### Hedefler Sayfası
-![Hedefler](./assets/screenshots/goals_screenshots.png)
-  
+![Hedefler](./assets/screenshots/goals_screenshots1.png)
+![Hedefler](./assets/screenshots/goals_screenshots2.png)
+### Alışkanlıklar Sayfası
+![Alışkanlıklar](./assets/screenshots/habits_screenshot.png)
+### Motivasyon Sayfası
+![Motivasyon](./assets/screenshots/motivation_screenshots.png)
+### Geçmiş Sayfası
+![geçmiş](./assets/screenshots/history_screenshots.png)
+### Kayıt Ol Sayfası
+![Kayıt](./assets/screenshots/login_screenshots.png)
+### Profil Sayfası
+![Profil](./assets/screenshots/profile_screenshots.png)
+### Ayarlar Sayfası
+![Ayarlar](./assets/screenshots/settings_screenshots.png)
+### Akıllı Asistan Sayfası
+![Asistan](./assets/screenshots/voice_screenshots.png)
 
 ## Projeye Katkı Sağlama
 
