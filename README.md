@@ -166,6 +166,11 @@ lib/
 ![Ayarlar](./assets/screenshots/settings_screenshots.png)
 ### Akıllı Asistan Sayfası
 ![Asistan](./assets/screenshots/voice_screenshots.png)
+## Demo Videosu
+
+Uygulamanın nasıl çalıştığını ve özelliklerini izlemek için aşağıdaki videoyu izleyebilirsiniz:
+
+[Demo Videosu İzle](https://youtube.com/shorts/AEnRVdnpbfc?feature=shared)
 
 ## Projeye Katkı Sağlama
 
