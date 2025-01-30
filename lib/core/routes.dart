@@ -9,37 +9,55 @@ import '../screens/settings_screen.dart';
 
 // Router yapılandırması
 final router = GoRouter(
-  initialLocation: '/home', // Başlangıç rotası
+  initialLocation: '/', // Başlangıç rotası
   routes: [
     // Yükleme ekranı
     GoRoute(
       path: '/',
-      builder: (context, state) => const LoadingScreen(),
+      pageBuilder: (context, state) => NoTransitionPage<void>(
+        key: state.pageKey,
+        child: const LoadingScreen(),
+      ),
     ),
     // Ana sayfa
     GoRoute(
       path: '/home',
-      builder: (context, state) => const HomeScreen(),
+      pageBuilder: (context, state) => NoTransitionPage<void>(
+        key: state.pageKey,
+        child: const HomeScreen(),
+      ),
     ),
     // Hedefler sayfası
     GoRoute(
       path: '/goals',
-      builder: (context, state) => const GoalsScreen(),
+      pageBuilder: (context, state) => NoTransitionPage<void>(
+        key: state.pageKey,
+        child: const GoalsScreen(),
+      ),
     ),
     // Alışkanlıklar sayfası
     GoRoute(
       path: '/habits',
-      builder: (context, state) => const HabitsScreen(),
+      pageBuilder: (context, state) => NoTransitionPage<void>(
+        key: state.pageKey,
+        child: const HabitsScreen(),
+      ),
     ),
     // Profil sayfası
     GoRoute(
       path: '/profile',
-      builder: (context, state) => const ProfileScreen(),
+      pageBuilder: (context, state) => NoTransitionPage<void>(
+        key: state.pageKey,
+        child: const ProfileScreen(),
+      ),
     ),
     // Ayarlar sayfası
     GoRoute(
       path: '/settings',
-      builder: (context, state) => const SettingsScreen(),
+      pageBuilder: (context, state) => NoTransitionPage<void>(
+        key: state.pageKey,
+        child: const SettingsScreen(),
+      ),
     ),
   ],
 );
